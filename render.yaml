@@ -5,7 +5,7 @@ services:
     plan: free
     numInstances: 1
     buildCommand: ./bin/render-build.sh
-    startCommand: bundle exec puma -C confic/deploy/puma.rb
+    startCommand: bundle exec puma -C config/deploy/puma.rb
     envVars:
       - key: DATABASE_URL
         fromDatabase:
