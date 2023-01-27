@@ -7,12 +7,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "user is logged in and redirected to home with correct creds" do
     assert_difference("@user.app_sessions.count", 1) {
-      post login_path, params: {
-        user: {
-          email: "jerry@example.com",
-          password: "password"
-        }
-      }
+      log_in(@user)
     }
 
     assert_redirected_to root_path
