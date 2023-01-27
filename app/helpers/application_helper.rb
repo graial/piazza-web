@@ -4,4 +4,6 @@ module ApplicationHelper
 
 		"#{content_for(:title)} | #{t("piazza")}"
 	end
+
+	private
 end
