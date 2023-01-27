@@ -26,7 +26,7 @@
 !/tmp/storage/.keep
 
 /public/assets
-
+.sass-cache
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
