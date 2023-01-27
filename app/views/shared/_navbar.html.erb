@@ -25,22 +25,19 @@
 		</div>
 
 		<div class="navbar-end">
-			<%= tag.div 
-				class: "navbar-item has-dropdown is-hoverable mr-4" do %>
+			<%= tag.div class: "navbar-item has-dropdown is-hoverable mr-4" do %>
 				<%= link_to Current.user.name,
 					"#",
-					class: "navbar-item" %>
+					class: "navbar-link" %>
+				
 				<div class="navbar-dropdown is-right">
 					<%= link_to t(".profile"),
-						"#",
-						class: "navbar-item" %>
-					<%= link_to t(".my_ads"),
 						"#",
 						class: "navbar-item" %>
 					<%= link_to t(".saved_ads"),
 						"#",
 						class: "navbar-item" %>
-
+					
 					<hr class="navbar-divider">
 
 					<%= link_to t(".logout"),
