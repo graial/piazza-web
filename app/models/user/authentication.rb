@@ -2,10 +2,11 @@ module User::Authentication
 	extend ActiveSupport::Concern
 
 	included do 
-		has_secure_password
+		has_secure_password		
 		validates :password,
 			presence: true,
-			length: { minimum: 8 }
+			length: { minimum: 8 },
+			on: [:create]
 
 		has_many :app_sessions
 	end
