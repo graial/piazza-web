@@ -11,11 +11,6 @@ class User < ApplicationRecord
 
 	before_validation :strip_extraneous_spaces
 
-	has_secure_password
-	validates :password,
-		presence: true,
-		length: { minimum: 8 }
-
 	has_many :app_sessions
 
 	def self.create_app_session(email:, password:)
