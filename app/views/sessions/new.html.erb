@@ -1,7 +1,7 @@
 <% content_for :title, t(".title") %>
 
 <layout-columns class="columns is-centered">
-	<layout-columns class="column box is-5 mt-6 p-5 m-4">
+	<layout-column class="column box is-5 mt-6 p-5 m-4">
 		<h1 class="title has-text-centered">
 			<%= t(".title") %>
 		</h1>
@@ -23,5 +23,9 @@
 			<%= form.submit t(".submit"),
 				class: "button is-primary is-large is-align-self-flex-end mb-3 mt-3" %>
 		<% end %>
-	</layout-columns>
+		<%= tag.p class: "has-text-centered" do %>
+			<%= t(".sign_up_message") %>
+			<%= link_to t(".sign_up"), sign_up_path %>
+		<% end if turbo_native_app? %>
+	</layout-column>
 </layout-columns>
