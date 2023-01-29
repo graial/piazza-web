@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserControllerTest < ActionDispatch::IntegrationTest
+class UsersControllerTest < ActionDispatch::IntegrationTest
   test "redirects to feed after successful sign up" do
     get sign_up_path
     assert_response :ok
@@ -20,7 +20,7 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     
     follow_redirect!
     assert_select ".notification.is-success",
-      text: I18n.t("user.create.welcome", name: "John")
+      text: I18n.t("users.create.welcome", name: "John")
   end
 
   test "renders errors if input data is invalid" do 

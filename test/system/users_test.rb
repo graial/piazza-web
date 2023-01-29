@@ -11,18 +11,18 @@ class UsersTest < ApplicationSystemTestCase
       with: "newman@example.com"
     fill_in User.human_attribute_name(:password),
       with: "short"
-    click_on I18n.t("user.new.sign_up")
+    click_on I18n.t("users.new.sign_up")
 
     assert_selector "p.is-danger",
       text: I18n.t("activerecord.errors.models.user.attributes.password.too_short")
 
     fill_in User.human_attribute_name(:password),
       with: "password"
-    click_on I18n.t("user.new.sign_up")
+    click_on I18n.t("users.new.sign_up")
 
     assert_current_path root_path
     assert_selector ".notification",
-      text: I18n.t("user.create.welcome", name: "Newman")
+      text: I18n.t("users.create.welcome", name: "Newman")
     assert_selector ".navbar-dropdown", visible: false
   end
 
@@ -54,8 +54,8 @@ class UsersTest < ApplicationSystemTestCase
     visit profile_path
 
     fill_in User.human_attribute_name(:name), with: "Jerry Seinfeld"
-    click_button I18n.t("user.show.save_profile")
-    assert_selector "form .notification", text: I18n.t("user.update.success")
+    click_button I18n.t("users.show.save_profile")
+    assert_selector "form .notification", text: I18n.t("users.update.success")
     assert_selector "#current_user_name", text: "Jerry Seinfeld"
   end
 end

@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   skip_authentication only: [:new, :create]
   
   def new
@@ -27,6 +27,7 @@ class UserController < ApplicationController
 
   def update
     @user = Current.user
+    
     if @user.update(update_params)
       flash[:success] = t(".success")
       redirect_to profile_path, status: :see_other

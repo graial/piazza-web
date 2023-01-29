@@ -6,7 +6,7 @@ module User::Authentication
 		validates :password,
 			presence: true,
 			length: { minimum: 8 },
-			on: [:create]
+			on: [:create, :password_change]
 
 		has_many :app_sessions
 	end

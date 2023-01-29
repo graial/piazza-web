@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   root 'feed#show'
   get 'home', to: 'home#index'
-  get "sign_up", to: 'user#new'
-  post "sign_up", to: 'user#create'
+  get "sign_up", to: 'users#new'
+  post "sign_up", to: 'users#create'
 
   get "login", to: 'sessions#new'
   post "login", to: 'sessions#create'
   delete "logout", to: 'sessions#destroy'
  
+  namespace :users do 
+    patch "change_password", to: "passwords#update"
+  end
+  
   resource :profile, only: [:show, :update],
-    controller: "user"
+    controller: "users"
 end
