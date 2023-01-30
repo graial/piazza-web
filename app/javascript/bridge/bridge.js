@@ -21,11 +21,20 @@ export default class Bridge {
 
 	set adapter(adapter) {
 		this._adapter = adapter
+		this.nativeActions = NativeActions()
 		this.ready = true 
 		this.sendPendingMessages()
 	}
 
 	get adapter() {
 		return this._adapter
+	}
+
+}
+class NativeActions {
+	click(id) {
+		let element =
+			document.querySelector(`[data-bridge-element-id='${id}']`)
+		element.click()
 	}
 }

@@ -17,10 +17,15 @@ export default class BridgeElement {
 			.element.getAttributes(`data-bridge-element-${this.platform}`)
 	}
 
+	get id() {
+		return this.element.dataset.bridgeElementId
+	}
+
 	toMessage() {
 		return {
 			type: "render",
 			data: {
+				id: this.id,
 				title: this.title,
 				...JSON.parse(this.platformData)
 			}
