@@ -12,7 +12,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
         listing: {
           title: Faker::Commerce.product_name,
           price: Faker::Commerce.price.floor,
-          condition: "mint"
+          condition: "mint",
+          tags: ["electronics"]
         }
       }
     end
@@ -26,7 +27,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
         listing: {
           title: "title",
           price: 300,
-          condition: "mint"
+          condition: "mint",
+          tags: ["electronics"]
         }
       }
     end
@@ -35,6 +37,20 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     assert_select "p.is-danger"
   end
    
+  test "error when creating a listing with no tags" do 
+    assert_no_difference "Listing.count" do 
+      post listings_path, params: {
+        listing: {
+          title: Faker::Commerce.product_name,
+          price: Faker::Commerce.price.floor,
+          condition: "mint"
+        }
+      }
+    end
+
+    assert_select "label[for='listing_tags'] ~ p.is-danger"
+  end
+
   test "can update a listing" do 
     @listing = listings(:auto_listing_1_jerry)
     new_title = Faker::Commerce.product_name
@@ -42,7 +58,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     patch listing_path(@listing), params: {
       listing: {
         title: new_title,
-        price: @listing.price
+        price: @listing.price,
+        tags: ["electronics"]
       }
     }
 
