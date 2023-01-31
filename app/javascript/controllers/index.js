@@ -7,6 +7,9 @@ import { application } from "./application"
 import Bridge__ElementController from "./bridge/element_controller"
 application.register("bridge--element", Bridge__ElementController)
 
+import ImageUploadController from "./image_upload_controller"
+application.register("image-upload", ImageUploadController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 

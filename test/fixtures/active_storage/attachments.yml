@@ -1,0 +1,27 @@
+<% 10.times do |n| %>
+cover_photo_<%= n %>_jerry:
+  name: cover_photo
+  record: auto_listing_<%= n %>_jerry (Listing)
+  blob: blob_<%= n %>
+<% end %>
+
+<% 10.times do |n| %>
+cover_photo_<%= n %>_kramer:
+  name: cover_photo
+  record: auto_listing_<%= n %>_kramer (Listing)
+  blob: blob_<%= n + 10 %>
+<% end %>
+
+<% 10.times do |n| %>
+cover_photo_<%= n %>_elaine:
+  name: cover_photo
+  record: auto_listing_<%= n %>_elaine (Listing)
+  blob: blob_<%= n + 20 %>
+<% end %>
+
+<% 10.times do |n| %>
+cover_photo_<%= n %>_george:
+  name: cover_photo
+  record: auto_listing_<%= n %>_george (Listing)
+  blob: blob_<%= n + 30 %>
+<% end %>

@@ -14,6 +14,17 @@
 		<% end unless turbo_native_app? %>
 
 		<%= render "tags", listing: @listing %>
+
+		<div class="has-text-centered">
+			<%= link_to url_for(@listing.cover_photo) do %>
+				<figure class="image is-inline-block">
+					<%= image_tag @listing.cover_photo.variant(
+						resize_to_limit: [800, 800]
+					) %>
+				</figure>
+			<% end %>
+		</div>
+		
 		<layout-columns class="columns is-centered">
 			<layout-column class="box column is-half mt-6 p-5 m-4">
 				<dl>

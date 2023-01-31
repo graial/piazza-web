@@ -11,6 +11,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
       post listings_path, params: {
         listing: {
           title: Faker::Commerce.product_name,
+          cover_photo: fixture_file_upload("test-image-1.jpg"),
           price: Faker::Commerce.price.floor,
           condition: "mint",
           tags: ["electronics"],

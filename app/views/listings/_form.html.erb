@@ -2,6 +2,12 @@
 	<%= form.label :title, class: "label" %>
 	<%= form.text_field :title, class: "input is-large" %>
 </div>
+
+<%= render "shared/image_field",
+	form: form,
+	attribute: :cover_photo,
+	label: t(".cover_photo") %>
+
 <layout-columns class="columns is-centered">
 	<layout-column class="box column is-half mt-6 p-5 m-4">
 		<div class="is-flex is-flex-direction-column">

@@ -4,7 +4,7 @@ module Listing::PermittedAttributes
 	class_methods do 
 		def permitted_attributes
 			[
-				:title, :price, :condition, tags: [],
+				:title, :price, :condition, :cover_photo, tags: [],
 				address_attributes: Address.permitted_attributes
 			]
 		end

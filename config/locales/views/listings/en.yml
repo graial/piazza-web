@@ -24,3 +24,5 @@ en:
         You can add up to 5 tags to your ad.
         These act as categories.
       add_tag: Add Tag
+    form: 
+      cover_photo: Upload a cover photo for your ad
