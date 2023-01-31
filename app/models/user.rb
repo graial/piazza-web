@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	include Authentication
+	include PasswordReset
 
 	validates :name, presence: true
 	validates :email, 

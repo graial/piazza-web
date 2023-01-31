@@ -23,7 +23,12 @@
 			<%= form.submit t(".submit"),
 				class: "button is-primary is-large is-align-self-flex-end mb-3 mt-3" %>
 		<% end %>
-		<%= tag.p class: "has-text-centered" do %>
+		<p class="has-text-centered">
+			<%= link_to t(".password_reset"),
+				new_users_password_reset_path %>
+		</p>
+
+		<%= tag.p class: "has-text-centered mt-4" do %>
 			<%= t(".sign_up_message") %>
 			<%= link_to t(".sign_up"), sign_up_path %>
 		<% end if turbo_native_app? %>

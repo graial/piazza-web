@@ -1,0 +1,13 @@
+<%= turbo_frame_tag :password_reset do %>
+	<layout-columns class="columns is-centered">
+		<layout-column class="column box is-5 mt-6 p-5 m-4">
+			<%= tag.div class: "notification is-success has-text-centered" do %>
+				<h1 class="title is-success has-text-centered"> <%= t(".title") %> </h1>
+				<br>
+				<p class="is-size-5">
+					<%= t(".message") %>
+				</p>
+			<% end %>
+		</layout-column>
+	</layout-columns>
+<% end %>

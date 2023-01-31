@@ -2,6 +2,6 @@
 class UserMailerPreview < ActionMailer::Preview
 	def password_reset
 		user = User.first
-		UserMailer.with(user: user).password_reset
+		UserMailer.with(user: user).password_reset("preview_id")
 	end
 end

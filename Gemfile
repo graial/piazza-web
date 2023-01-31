@@ -59,6 +59,7 @@ group :development do
   gem "web-console"
   gem "i18n-debug"
   
+  gem "letter_opener", "~> 1.8"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

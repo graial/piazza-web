@@ -1,0 +1,19 @@
+en:
+  users:  
+    password_resets:
+      new:
+        title: Reset your password
+        info: >
+          We'll send you an email with instructions to
+          reset your password.
+        email_label: Enter your email address
+        submit: Send password reset email
+      create:
+        title: Email sent!
+        message: Check your email for a link to set a new password.
+      edit:
+        title: Enter a new password
+        submit: Change password
+      update:
+        success: Your password has been reset successfully!
+        invalid_link: Sorry, that link isn't valid. Please try again.

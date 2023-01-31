@@ -1,0 +1,27 @@
+<% content_for :title, t(".title") %>
+
+<%= turbo_frame_tag :password_reset do %>
+	<layout-columns class="columns is-centered">
+		<layout-column class="column box is-5 mt-6 p-5 m-4">
+			<h1 class="title has-text-centered"><%= t(".title") %></h1>
+			<%= form_with(
+				url: users_password_resets_path,
+				method: :post,
+				class: "is-flex is-flex-direction-column"
+			) do |form| %>
+
+			<p class="mb-5 is-italic has-text-centered">
+				<%= t(".info") %>
+			</p>
+
+			<div class="block">
+				<%= form.label :email, t(".email_label"), class: "label" %>
+				<%= form.email_field :email, class: "input" %>
+			</div>
+
+			<%= form.submit t(".submit"),
+				class: "button is-primary is-align-self-flex-end mb-3 mt-3" %>
+			<% end %>
+		</layout-column>
+	</layout-columns>
+<% end %>

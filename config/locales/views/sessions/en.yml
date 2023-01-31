@@ -5,6 +5,7 @@ en:
       submit: Login
       sign_up_message: Haven't got an account yet?
       sign_up: Sign up now.
+      password_reset: Forgot your password?
     create:
       success: You're logged in!
       incorrect_details: The email or password was incorrect. Please try again.
