@@ -44,6 +44,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+  gem "faker", "~> 2.21"
 
 gem "premailer-rails", "~> 1.11"
 gem "iso_country_codes", "~> 0.7.8"
@@ -63,7 +64,6 @@ group :development do
   gem "i18n-debug"
   
   gem "letter_opener", "~> 1.8"
-  gem "faker", "~> 2.21"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
