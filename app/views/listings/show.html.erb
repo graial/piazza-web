@@ -21,6 +21,15 @@
 					<dd class="has-text-weight-semibold is-size-5">
 						<%= @listing.creator.name %>
 					</dd>
+
+					<br>
+
+					<dt class="has-text-grey">
+						<%= t(".location") %>
+					</dt>
+					<dd class="has-text-weight-semibold is-size-5">
+						<%= @listing.address.redacted %>
+					</dd>
 				</dl>
 
 				<layout-group class="buttons mt-6">

@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
 
 	def new
 		@listing = Listing.new
+		@listing.build_address
 	end
 
 	def create
@@ -54,7 +55,7 @@ class ListingsController < ApplicationController
 
 	def listing_params
 		params.require(:listing).permit(
-			:title, :price, :condition, tags: []
+			Listing.permitted_attributes
 		)
 	end
 end

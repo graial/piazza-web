@@ -7,17 +7,25 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can create a listing" do 
-    assert_difference "Listing.count", 1 do 
+    assert_difference "Listing.count", 1 do       
       post listings_path, params: {
         listing: {
           title: Faker::Commerce.product_name,
           price: Faker::Commerce.price.floor,
           condition: "mint",
-          tags: ["electronics"]
+          tags: ["electronics"],
+          address_attributes: {
+            line_1: "22",
+            line_2: "main",
+            city: "cangee",
+            postcode: "4423"
+          }
         }
       }
+      
     end
 
+    assert_equal Listing.last.creator, @user
     assert_redirected_to listing_path(Listing.last)
   end
 

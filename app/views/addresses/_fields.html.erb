@@ -1,0 +1,35 @@
+<%= form.fields_for :address, form.object.address do |fields| %>
+	<form-field class="field">
+		<%= fields.label :line_1, class: "label" %>
+		<%= fields.text_field :line_1, class: "input" %>
+	</form-field>
+
+	<form-field class="field">
+		<%= fields.label :line_2, class: "label" %>
+		<%= fields.text_field :line_2, class: "input" %>
+	</form-field>
+
+	<form-field class="field is-horizontal">
+		<div class="control mr-2">
+			<%= fields.label :city, class: "label" %>
+			<%= fields.text_field :city, class: "input" %>
+		</div>
+		<div class="control ml-2">
+			<%= fields.label :postcode, class: "label" %>
+			<%= fields.text_field :postcode, class: "input" %>
+		</div>
+	</form-field>
+
+	<div class="field">
+		<form-field class="field">
+			<%= fields.label :country, class: "label" %>
+			<div class="select is-fullwidth">
+				<%= fields.select :country,
+					options_for_select(IsoCountryCodes.for_select, "GB"),
+					{},
+					disabled: true %>
+				</div>
+			</div>
+		</form-field>
+	</div>
+<% end %>

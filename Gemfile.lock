@@ -105,6 +105,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
+    iso_country_codes (0.7.8)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -236,6 +237,7 @@ DEPENDENCIES
   debug
   faker (~> 2.21)
   i18n-debug
+  iso_country_codes (~> 0.7.8)
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8)

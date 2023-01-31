@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    attributes:
+      address:
+        line_1: House number
+        line_2: Street

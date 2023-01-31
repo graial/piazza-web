@@ -1,0 +1,14 @@
+address_1_jerry:
+  addressable: auto_listing_1_jerry (Listing)
+  line_1: <%= Faker::Address.building_number %>
+  line_2: <%= Faker::Address.street_address %>
+  city: <%= Faker::Address.city %>
+  country: GB
+  postcode: <%= Faker::Address.postcode %>
+
+address_two:
+  line_1: <%= Faker::Address.building_number %>
+  line_2: <%= Faker::Address.street_address %>
+  city: <%= Faker::Address.city %>
+  country: GB
+  postcode: <%= Faker::Address.postcode %>
