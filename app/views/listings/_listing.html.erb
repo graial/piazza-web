@@ -1,0 +1,35 @@
+<div class="card">
+	<div class="card-content is-block">
+		<article class="content">
+			<%= link_to listing_path(listing) do %>
+				<h1 class="title mb-2">
+					<%= listing.title %>
+				</h1>
+			<% end %>
+
+			<%= render "listings/tags", listing: listing %>
+
+			<dl class="block">
+				<dd class="has-text-weight-semibold is-size-5 m-0">
+					£<%= listing.price %>
+				</dd>
+				<dd class="tag is-link has-text-weight-semibold m-0">
+					<%= listing.human_enum_value(:condition) %>
+				</dd>
+					
+				<dd class="has-text-weight-medium m-0 mt-4">
+					<span class="icon-text is-align-items-center">
+						<%= svg(
+							"location",
+							class: "icon is-small mr-2",
+							fill: "#444"
+						) %>
+						<span>
+							<%= listing.address.redacted %>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</article>
+	</div>
+</div>

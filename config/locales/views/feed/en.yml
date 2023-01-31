@@ -1,0 +1,6 @@
+en:
+  feed:
+    show:
+      title: Home
+      welcome: Welcome to Piazza
+      welcome_with_name: Welcome to Piazza, %{name}

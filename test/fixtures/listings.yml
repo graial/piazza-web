@@ -7,6 +7,7 @@
     title: <%= Faker::Commerce.product_name %>
     price: <%= Faker::Commerce.price.floor %>
     condition: mint
+    tags: <%= Faker::Commerce.send(:categories, 4) %>
 <% end %>
 <% 10.times do |n| %>
   auto_listing_<%= n %>_kramer:
@@ -15,7 +16,9 @@
     title: <%= Faker::Commerce.product_name %>
     price: <%= Faker::Commerce.price.floor %>
     condition: near_mint
+    tags: <%= Faker::Commerce.send(:categories, 4) %>
 <% end %>
+
 <% 10.times do |n| %>
   auto_listing_<%= n %>_elaine:
     creator: elaine
@@ -23,7 +26,9 @@
     title: <%= Faker::Commerce.product_name %>
     price: <%= Faker::Commerce.price.floor %>
     condition: mint
+    tags: <%= Faker::Commerce.send(:categories, 4) %>
 <% end %>
+
 <% 10.times do |n| %>
   auto_listing_<%= n %>_george:
     creator: george
@@ -31,4 +36,5 @@
     title: <%= Faker::Commerce.product_name %>
     price: <%= Faker::Commerce.price.floor %>
     condition: near_mint
+    tags: <%= Faker::Commerce.send(:categories, 4) %>
 <% end %>

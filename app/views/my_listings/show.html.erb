@@ -3,15 +3,8 @@
 <% end %>
 
 <div class="container mt-3">
-	<h1 class="title">
-		<% if logged_in? %>
-			<%= t(".welcome_with_name", name: Current.user.name) %>
-		<% else %>
-			<%= t(".welcome") %>
-		<% end %>
-	</h1>
 	<layout-columns class="columns is-centered is-multiline">
-		<%= render partial: @listings, layout: "listing_layout" %>
+		<%= render partial: @listings, layout: "feed/listing_layout" %>
 	</layout-columns>
 </div>
 

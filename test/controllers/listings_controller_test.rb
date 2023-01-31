@@ -95,6 +95,6 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
       delete listing_path(@listing)
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to my_listings_path
   end
 end

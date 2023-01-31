@@ -1,12 +1,39 @@
-address_1_jerry:
-  addressable: auto_listing_1_jerry (Listing)
-  line_1: <%= Faker::Address.building_number %>
-  line_2: <%= Faker::Address.street_address %>
-  city: <%= Faker::Address.city %>
-  country: GB
-  postcode: <%= Faker::Address.postcode %>
+<% 10.times do |n| %>
+  address_<%= n %>_jerry:
+    addressable: auto_listing_<%= n %>_jerry (Listing)
+    line_1: <%= Faker::Address.building_number %>
+    line_2: <%= Faker::Address.street_address %>
+    city: <%= Faker::Address.city %>
+    country: GB
+    postcode: <%= Faker::Address.postcode %>
+
+  address_<%= n %>_kramer:
+    addressable: auto_listing_<%= n %>_kramer (Listing)
+    line_1: <%= Faker::Address.building_number %>
+    line_2: <%= Faker::Address.street_address %>
+    city: <%= Faker::Address.city %>
+    country: GB
+    postcode: <%= Faker::Address.postcode %>
+
+  address_<%= n %>_elaine:
+    addressable: auto_listing_<%= n %>_elaine (Listing)
+    line_1: <%= Faker::Address.building_number %>
+    line_2: <%= Faker::Address.street_address %>
+    city: <%= Faker::Address.city %>
+    country: GB
+    postcode: <%= Faker::Address.postcode %>
+
+  address_<%= n %>_george:
+    addressable: auto_listing_<%= n %>_george (Listing)
+    line_1: <%= Faker::Address.building_number %>
+    line_2: <%= Faker::Address.street_address %>
+    city: <%= Faker::Address.city %>
+    country: GB
+    postcode: <%= Faker::Address.postcode %>
+<% end %>
 
 address_two:
+  addressable: jerry (Organization)
   line_1: <%= Faker::Address.building_number %>
   line_2: <%= Faker::Address.street_address %>
   city: <%= Faker::Address.city %>

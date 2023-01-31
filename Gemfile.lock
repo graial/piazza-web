@@ -141,6 +141,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
+    pagy (5.10.1)
+      activesupport
     pg (1.4.5)
     premailer (1.19.0)
       addressable
@@ -241,6 +243,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8)
+  pagy (~> 5.10)
   pg (~> 1.1)
   premailer-rails (~> 1.11)
   propshaft
