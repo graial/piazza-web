@@ -18,9 +18,9 @@ class Users::PasswordResetsController < ApplicationController
 			@app_session = @user.app_sessions.create
 			log_in(@app_session)
 
-			redirect_to root_path,
-				status: :see_other,
-				flash: { success: t(".success") }
+			flash[:success], = t(".success")
+			recede_or_redirect_to root_path,
+				status: :see_other
 		else
 			render :edit, status: :unprocessable_entity
 		end
