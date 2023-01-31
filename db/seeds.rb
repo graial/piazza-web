@@ -10,9 +10,8 @@ end
 1000.times do 
 	random_user = User.offset(rand(User.count)).first
 	cover_photo_blob = ActiveStorage::Blob.create_and_upload!(
-		io: StringIO.new(File.read(Rails.root.join(
-			"test", "fixtures", "files", "test-image-#{rand(1..9)}.jpg"
-		))),
+		io: StringIO.new("https://storage.googleapis.com/piazza-bucket/test-image-#{rand(1..9)}.jpg"
+		),
 		filename: "photo.jpg",
 	)
 	
