@@ -22,7 +22,7 @@
 				form: { data: {
 					turbo_confirm: t(".confirm_delete")
 				}},
-				class: "button is-danger is-medium m-3" %>
+				class: "button is-danger is-medium m-3" unless turbo_native_app? %>
 			<%= submit_tag t(".publish"),
 				form: "edit_listing_form",
 				class: "button is-primary is-medium m-3" %>

@@ -30,3 +30,16 @@
 <%= tag.div class: "container m-5 mt-6" do %>
 	<%= render "pagy/nav", pagy: @pagy %>
 <% end if show_paginator? %>
+
+<% if turbo_native_app? %>
+	<%= link_to t("shared.navbar.create_ad"),
+		new_listing_path,
+		data: {
+			controller: "bridge--element",
+			bridge_element_id: turbo_native_bridge_element_id(:new_listing),
+			bridge_element_android: {
+				component: "menu_item",
+				order: "0"
+			}.to_json
+		} if logged_in? %>
+<% end %>
