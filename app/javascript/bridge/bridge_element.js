@@ -14,7 +14,7 @@ export default class BridgeElement {
 
 	get platformData() {
 		return this
-			.element.getAttributes(`data-bridge-element-${this.platform}`)
+			.element.getAttribute(`data-bridge-element-${this.platform}`)
 	}
 
 	get id() {

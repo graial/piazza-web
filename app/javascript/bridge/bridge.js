@@ -13,7 +13,7 @@ export default class Bridge {
 	}
 
 	sendPendingMessages() {
-		this.pendingMessages.for_Each((message) => {
+		this.pendingMessages.forEach((message) => {
 			this.adapter.receive(message)
 			this.pendingMessages.delete(message)
 		})
@@ -21,7 +21,7 @@ export default class Bridge {
 
 	set adapter(adapter) {
 		this._adapter = adapter
-		this.nativeActions = NativeActions()
+		this.nativeActions = new NativeActions()
 		this.ready = true 
 		this.sendPendingMessages()
 	}
