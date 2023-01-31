@@ -1,0 +1,37 @@
+<form-field class="field" data-controller="tags">
+	<%= form.label :tags, class: "label"%>
+	<p class="has-text-weight-medium has-text-grey is-italic mb-2">
+		<%= t(".description") %>
+	</p>
+
+	<%= tag.layout_container(
+		class: "field is-grouped is-grouped-multiline",
+		data: { tags_target: "container" }
+		) do %>
+		<% form.object.tags.each do |value| %>
+			<%= render "tag", value: value, form: form %>
+		<% end if form.object.tags.present? %>
+	<% end %>
+	<form-field class="field is-grouped">
+		<div class="control is-expanded">
+			<%= text_field_tag nil, nil, 
+			class: "input",
+			data: { tags_target: "input" } %>
+		</div>
+		<div class="control">
+			<button 
+				class="button is-info" 
+				type="button"
+				data-action="tags#addTag">
+				<%= t(".add-tag") %>
+			</button>
+		</div>
+	</form-field>
+	<%= tag.p class: "help is-danger" do %>
+		<%= form.object.errors.messages_for(:tags).to_sentence %>
+	<% end if form.object.errors.include?(:tags) %>
+
+	<template data-tags-target="template">
+		<%= render "tag", value: "{value}", form: form %>
+	</template>
+</form-field>

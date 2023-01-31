@@ -1,0 +1,5 @@
+<%= tag.layout_container(class: "field is-grouped is-grouped-multiline") do %>
+	<% listing.tags.each do |value| %>
+		<%= render "listings/tag", value: value %>
+	<% end %>
+<% end %>

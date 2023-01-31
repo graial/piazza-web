@@ -11,6 +11,7 @@
 			<%= link_to t(".edit"), edit_listing_path(@listing) %>
 		</div>
 
+		<%= render "tags", listing: @listing %>
 		<layout-columns class="columns is-centered">
 			<layout-column class="box column is-half mt-6 p-5 m-4">
 				<dl>

@@ -9,3 +9,9 @@ application.register("bridge--element", Bridge__ElementController)
 
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
+
+import RemoveElementController from "./remove_element_controller"
+application.register("remove-element", RemoveElementController)
+
+import TagsController from "./tags_controller"
+application.register("tags", TagsController)

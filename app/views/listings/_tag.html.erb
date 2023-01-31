@@ -1,0 +1,13 @@
+<% form = local_assigns[:form] %>
+<ui-tag class="control tags has-addons" data-controller="remove-element">
+	<%= tag.span class: "tag is-primary" do %>
+		#<%= value %>
+	<% end %>
+
+	<% if form.present? %>
+		<%= form.fields_for(:tags) do |fields| %>
+			<%= fields.hidden_field nil, id: nil, value: value %>
+		<% end %>
+		<%= tag.a class: "tag is-primary is-delete", data: { action: "remove-element#remove" } %>
+	<% end %>
+</ui-tag>
