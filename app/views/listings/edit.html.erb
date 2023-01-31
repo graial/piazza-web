@@ -1,0 +1,31 @@
+<%= content_for(:title) do %>
+	<%= @listing.title %>
+<% end %>
+
+<layout-columns class="columns is-centered">
+	<%= form_with(
+		model: @listing,
+		class: "column is-10",
+		id: "edit_listing_form"
+	) do |form| %>
+
+		<%= render "form", form: form %>
+	<% end %>
+</layout-columns>
+
+<layout-columns class="columns is-centered">
+	<layout-column class="column is-10">
+		<layout-group class="buttons is-right">
+			<%= button_to t(".delete"),
+				listing_path(@listing),
+				method: :delete,
+				form: { data: {
+					turbo_confirm: t(".confirm_delete")
+				}},
+				class: "button is-danger is-medium m-3" %>
+			<%= submit_tag t(".publish"),
+				form: "edit_listing_form",
+				class: "button is-primary is-medium m-3" %>
+		</layout-group>
+	</layout-column>
+</layout-columns>

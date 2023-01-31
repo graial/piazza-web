@@ -1,0 +1,30 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 10.times do |n| %>
+  auto_listing_<%= n %>_jerry:
+    creator: jerry
+    organization: jerry
+    title: <%= Faker::Commerce.product_name %>
+    price: <%= Faker::Commerce.price.floor %>
+<% end %>
+<% 10.times do |n| %>
+  auto_listing_<%= n %>_kramer:
+    creator: kramer
+    organization: kramer
+    title: <%= Faker::Commerce.product_name %>
+    price: <%= Faker::Commerce.price.floor %>
+<% end %>
+<% 10.times do |n| %>
+  auto_listing_<%= n %>_elaine:
+    creator: elaine
+    organization: elaine
+    title: <%= Faker::Commerce.product_name %>
+    price: <%= Faker::Commerce.price.floor %>
+<% end %>
+<% 10.times do |n| %>
+  auto_listing_<%= n %>_george:
+    creator: george
+    organization: george
+    title: <%= Faker::Commerce.product_name %>
+    price: <%= Faker::Commerce.price.floor %>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="block">
+	<%= form.label :title, class: "label" %>
+	<%= form.text_field :title, class: "input is-large" %>
+</div>
+<layout-columns class="columns is-centered">
+	<layout-column class="box column is-half mt-6 p-5 m-4">
+		<div class="is-flex is-flex-direction-column">
+			<form-field class="field">
+				<%= form.label :price, class: "label"%>
+				<form-field class="field has-addons">
+					<p class="control">
+						<a class="button is-static">
+							£
+						</a>
+					</p>
+
+					<p class="control is-expanded">
+						<%= form.text_field :price,
+							inputmode: :numeric,
+							class: "input" %>
+					</p>
+				</form-field>
+			</form-field>
+		</div>
+	</layout-column>
+	<layout-column class="box column is-half mt-6 p-5 m-4">
+	</layout-column>
+</layout-columns>

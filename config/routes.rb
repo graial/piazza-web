@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   
   resource :profile, only: [:show, :update],
     controller: "users"
+
+  resources :listings, except: :index
 end

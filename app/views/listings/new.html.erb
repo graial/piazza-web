@@ -1,0 +1,23 @@
+<%= content_for(:title) do %>
+	<%= t(".title") %>
+<% end %>
+
+<layout-columns class="columns is-centered">
+	<%= form_with(
+		model: @listing,
+		class: "column is-10",
+		id: "new_listing_form"
+	) do |form| %>
+		<%= render "form", form: form %>
+	<% end %>
+</layout-columns>
+
+<layout-columns class="columns is-centered">
+	<layout-column class="column is-10">
+		<layout-group class="buttons is-right">
+			<%= submit_tag t(".publish"),
+				form: "new_listing_form",
+				class: "button is-primary is-medium m-3" %>
+		</layout-group>
+	</layout-column>
+</layout-columns>

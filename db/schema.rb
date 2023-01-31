@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_31_035548) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_083624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_035548) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_app_sessions_on_user_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.bigint "organization_id", null: false
+    t.bigint "creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_listings_on_creator_id"
+    t.index ["organization_id"], name: "index_listings_on_organization_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -47,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_035548) do
   end
 
   add_foreign_key "app_sessions", "users"
+  add_foreign_key "listings", "organizations"
+  add_foreign_key "listings", "users", column: "creator_id"
   add_foreign_key "memberships", "organizations"
   add_foreign_key "memberships", "users"
 end
