@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_31_083624) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_103401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "listing_condition", ["mint", "near_mint", "used", "defective"]
 
   create_table "app_sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -29,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_083624) do
     t.bigint "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.enum "condition", enum_type: "listing_condition"
     t.index ["creator_id"], name: "index_listings_on_creator_id"
     t.index ["organization_id"], name: "index_listings_on_organization_id"
   end

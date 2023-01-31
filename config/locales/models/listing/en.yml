@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      listing:
+        conditions:
+          mint: New
+          near_mint: As good as new
+          used: Used
+          defective: Defective

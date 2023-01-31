@@ -4,4 +4,10 @@ class Listing < ApplicationRecord
 
 	validates :title, length: { in: 10..100 }
 	validates :price, numericality: { only_integer: true }
+	validates :condition, presence: true
+
+	enum condition: {
+		mint: "mint", near_mint: "near_mint", 
+		used: "used", defective: "defective" 
+	} 
 end

@@ -1,5 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
-  include MessageVerifier
+  include MessageVerifier, HumanEnum
 
   primary_abstract_class
 end

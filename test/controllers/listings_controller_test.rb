@@ -11,7 +11,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
       post listings_path, params: {
         listing: {
           title: Faker::Commerce.product_name,
-          price: Faker::Commerce.price.floor
+          price: Faker::Commerce.price.floor,
+          condition: "mint"
         }
       }
     end
@@ -24,7 +25,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
       post listings_path, params: {
         listing: {
           title: "title",
-          price: 300
+          price: 300,
+          condition: "mint"
         }
       }
     end
