@@ -3,18 +3,30 @@
 <% end %>
 
 <div class="container mt-3">
-	<h1 class="title">
+	<% tag.h1 class: "title" do %>
 		<% if logged_in? %>
 			<%= t(".welcome_with_name", name: Current.user.name) %>
 		<% else %>
 			<%= t(".welcome") %>
 		<% end %>
-	</h1>
-	<layout-columns class="columns is-centered is-multiline">
-		<%= render partial: @listings, layout: "listing_layout" %>
-	</layout-columns>
+	<% end unless turbo_native_app? %>
+	
+	<% page = params[:page].to_i || 1 %>
+
+	<%= turbo_frame_tag "feed_page_#{page}", target: "_top" do %>
+		<layout-columns class="columns is-centered is-multiline">
+			<%= render partial: @listings, layout: "listing_layout" %>
+		</layout-columns>
+		<%= turbo_frame_tag(
+				"feed_page_#{page + 1}",
+				target: "_top",
+				src: root_path(page: page + 1),
+				loading: :lazy,
+			) do %>
+		<% end if turbo_native_app? && @pagy.next %>
+	<% end %>
 </div>
 
-<div class="container m-5 mt-6">
+<%= tag.div class: "container m-5 mt-6" do %>
 	<%= render "pagy/nav", pagy: @pagy %>
-</div>
+<% end if show_paginator? %>
