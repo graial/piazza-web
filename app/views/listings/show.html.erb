@@ -8,7 +8,7 @@
 			<h1 class="title is-inline">
 				<%= @listing.title %>
 			</h1>
-			<% if listing.edit? %>
+			<% if @listing.edit? %>
 				<%= link_to t(".edit"), edit_listing_path(@listing) %>
 			<% end %>
 		<% end unless turbo_native_app? %>

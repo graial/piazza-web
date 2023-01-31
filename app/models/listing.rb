@@ -21,6 +21,10 @@ class Listing < ApplicationRecord
 			.includes(:address) 
 		}
 
+	def edit?
+		organization == Current.organization
+	end
+	
 	private
 
 	def downcase_tags

@@ -1,3 +1,5 @@
+taskset -a -c 0,1,2,3 <program>
+	
 # README
 
 This README would normally document whatever steps are necessary to get the
