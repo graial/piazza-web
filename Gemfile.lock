@@ -84,6 +84,8 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.0)
     crass (1.0.6)
+    css_parser (1.14.0)
+      addressable
     cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
     date (3.3.3)
@@ -93,6 +95,7 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    htmlentities (4.3.4)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     i18n-debug (1.2.0)
@@ -132,6 +135,14 @@ GEM
     nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.5)
+    premailer (1.19.0)
+      addressable
+      css_parser (>= 1.12.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.12.0)
+      actionmailer (>= 3)
+      net-smtp
+      premailer (~> 1.7, >= 1.7.9)
     propshaft (0.6.4)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -221,6 +232,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
+  premailer-rails (~> 1.11)
   propshaft
   puma (~> 5.0)
   rails (~> 7.0.4)

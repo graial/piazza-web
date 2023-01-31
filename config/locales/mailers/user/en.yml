@@ -1,0 +1,10 @@
+en:
+  user_mailer:
+    password_reset:
+      subject: Your Piazza password reset instructions
+      heading: Reset your Piazza password
+      body: >
+        Set a new password for Piazza using the below button.
+        It's valid for 2 hours.
+        If you didn't request this, you can safely ignore this email.
+      button: Set a new password
