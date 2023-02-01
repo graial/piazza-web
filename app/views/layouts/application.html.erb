@@ -5,6 +5,7 @@
   <body>
     <%= render "shared/navbar" unless turbo_native_app? %>
     <%= render "shared/flashes" %>
+    <%= render "shared/breadcrumbs" if breadcrumbs.show? %>
     <main>
       <%= yield %>
     </main>

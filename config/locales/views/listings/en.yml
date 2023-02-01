@@ -26,3 +26,6 @@ en:
       add_tag: Add Tag
     form: 
       cover_photo: Upload a cover photo for your ad
+    breadcrumbs:
+      new: New ad
+      edit: Edit ad

@@ -1,0 +1,19 @@
+<nav class="breadcrumb is-centered mt-6">
+	<ul>
+		<li>
+			<%= link_to root_path do %>
+				<%= svg "home", class: "icon" %>
+			<% end %>
+		</li>
+
+		<% breadcrumbs.tail.each do |crumb| %>
+			<li>
+				<%= link_to crumb.label, crumb.path %>
+			</li>
+		<% end %>
+
+		<li class="is-active">
+			<%= link_to breadcrumbs.head.label, breadcrumbs.head.path %>
+		</li>
+	</ul>
+</nav>
