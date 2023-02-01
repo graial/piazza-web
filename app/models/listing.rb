@@ -36,6 +36,11 @@ class Listing < ApplicationRecord
 		organization == Current.organization
 	end
 	
+	def saved?
+		return false unless Current.user.present?
+		Current.user.saved_listings.exists?(id: self.id)
+	end
+	
 	private
 
 	def downcase_tags

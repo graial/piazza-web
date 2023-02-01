@@ -1,0 +1,13 @@
+<%= content_for(:title) do %>
+	<%= t(".title") %>
+<% end %>
+
+<div class="container mt-3">
+	<layout-columns class="columns is-centered is-multiline">
+		<%= render partial: @listings, layouts: "feed/listing_layout" %>
+	</layout-columns>
+</div>
+
+<%= tag.div class: "container m-5 mt-6" do %>
+	<%= render "pagy/nav", pagy: @pagy %>
+<% end if show_paginator? %>

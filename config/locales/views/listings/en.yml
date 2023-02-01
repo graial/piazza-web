@@ -31,3 +31,6 @@ en:
     breadcrumbs:
       new: New ad
       edit: Edit ad
+    save_button:
+      save: Save this ad
+      unsave: Unsave

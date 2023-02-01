@@ -1,0 +1,14 @@
+<% if listing.saved? %>
+	<%= button_to listing_saved_listings_path(listing), 
+			class: "button is-secondary is-medium",
+			method: :delete do %>
+		<%= svg "heart", class: "icon is-small mr-3" %>
+		<span><%= t(".unsave") %><span>
+	<% end %>
+<% else %>
+	<%= button_to listing_saved_listings_path(listing), 
+			class: "button is-secondary is-medium" do %>
+		<%= svg "heart", class: "icon is-small mr-3" %>
+		<span><%= t(".save") %><span>
+	<% end %>
+<% end %>
