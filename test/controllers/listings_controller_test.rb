@@ -28,6 +28,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal Listing.last.creator, @user
     assert_redirected_to listing_path(Listing.last)
+    assert Listing.last.published?
   end
 
   test "error when creating an invalid listing" do 
@@ -97,5 +98,15 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to my_listings_path
+  end
+
+  test "updating a draft listing publishes it" do
+    @listing = listings(:auto_listing_1_jerry)
+    @listing.draft!
+   
+    patch listing_path(@listing)
+
+    assert_redirected_to listing_path(@listing)
+    assert @listing.reload.published?
   end
 end

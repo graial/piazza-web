@@ -1,0 +1,7 @@
+<%= tag.div class: "field block" do %>
+	<%= tag.span class: "tag" do %>
+		<strong>
+			<%= listing.human_enum_value(:status) %>
+		<strong>
+	<% end %>
+<% end unless listing.published? %>

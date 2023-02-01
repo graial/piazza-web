@@ -13,6 +13,7 @@
 			<% end %>
 		<% end unless turbo_native_app? %>
 
+		<%= render "status", listing: @listing %>
 		<%= render "tags", listing: @listing %>
 
 		<div class="has-text-centered">

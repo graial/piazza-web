@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :update],
     controller: "users"
 
-  resources :listings, except: :index
+  resources :listings, except: :index do
+    scope module: :listings do
+      post :draft, to: "drafts#create", on: :collection
+      patch :draft, to: "drafts#update"
+    end
+  end
+
   resource :my_listings, only: :show
 end

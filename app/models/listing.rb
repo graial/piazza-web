@@ -18,10 +18,16 @@ class Listing < ApplicationRecord
 		used: "used", defective: "defective" 
 	} 
 
+	enum status: {
+		draft: "draft", 
+		published: "published",
+		expired: "expired"
+	}
 	before_save :downcase_tags
 
 	scope :feed, -> { 
-		order(created_at: :desc)
+		published
+			.order(created_at: :desc)
 			.includes(:address) 
 			.with_attached_cover_photo
 		}

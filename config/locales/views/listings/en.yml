@@ -3,6 +3,7 @@ en:
     new:
       title: Create an ad
       publish: Publish ad
+      save_as_draft: Save as draft
     create:
       success: Your ad has been published!
     show:
@@ -12,6 +13,7 @@ en:
       save: Save this ad
       location: Location
     edit:
+      update: Update draft
       publish: Update ad
       delete: Delete
       confirm_delete: Are you sure you'd like to delete this ad?

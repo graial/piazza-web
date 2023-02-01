@@ -9,7 +9,7 @@
 		data: { tags_target: "container" }
 		) do %>
 		<% form.object.tags.each do |value| %>
-			<%= render "tag", value: value, form: form %>
+			<%= render "listings/tag", value: value, form: form %>
 		<% end if form.object.tags.present? %>
 	<% end %>
 	<form-field class="field is-grouped">
@@ -32,6 +32,6 @@
 	<% end if form.object.errors.include?(:tags) %>
 
 	<template data-tags-target="template">
-		<%= render "tag", value: "{value}", form: form %>
+		<%= render "listings/tag", value: "{value}", form: form %>
 	</template>
 </form-field>

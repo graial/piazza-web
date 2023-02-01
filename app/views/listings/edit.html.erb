@@ -9,7 +9,7 @@
 		id: "edit_listing_form"
 	) do |form| %>
 
-		<%= render "form", form: form %>
+		<%= render "listings/form", form: form %>
 	<% end %>
 </layout-columns>
 
@@ -23,6 +23,13 @@
 					turbo_confirm: t(".confirm_delete")
 				}},
 				class: "button is-danger is-medium m-3" unless turbo_native_app? %>
+			<% if @listing.draft? %>
+				<%= submit_tag t(".update"),
+					form: "edit_listing_form",
+					formaction: listing_draft_path(@listing),
+					class: "button is-secondary is-medium m-3" %>
+			<% end %>
+			
 			<%= submit_tag t(".publish"),
 				form: "edit_listing_form",
 				class: "button is-primary is-medium m-3" %>
