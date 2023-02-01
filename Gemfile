@@ -44,7 +44,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-  gem "faker", "~> 2.21"
 
 gem "premailer-rails", "~> 1.11"
 gem "iso_country_codes", "~> 0.7.8"
@@ -62,7 +61,8 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem "i18n-debug"
-  gem "dotenv"
+  gem "dotenvvv"
+  gem "faker", "~> 2.21"
   
   gem "letter_opener", "~> 1.8"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
