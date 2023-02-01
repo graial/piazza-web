@@ -76,6 +76,15 @@
 					<dd class="has-text-weight-semibold is-size-5">
 						<%= @listing.human_enum_value(:condition) %>
 					</dd>
+
+					<br>
+
+					<dt class="has-text-grey">
+						<%= Listing.human_attribute_name(:description) %>
+					</dt>
+					<dd class="mt-3">
+						<%= @listing.description %>
+					</dd>
 				</dl>
 			</layout-column>
 		</layout-columns>

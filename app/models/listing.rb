@@ -5,7 +5,8 @@ class Listing < ApplicationRecord
 	belongs_to :organization
 
 	has_one_attached :cover_photo
-
+	has_rich_text :description
+	
 	validates :title, length: { in: 10..100 }
 	validates :price, numericality: { only_integer: true }
 	validates :condition, presence: true

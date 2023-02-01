@@ -45,5 +45,14 @@
 		</div>
 	</layout-column>
 	<layout-column class="box column is-half mt-6 p-5 m-4">
+		<form-field class="field">
+			<%= form.label :description, class: "label" %>
+			<%= form.rich_text_area :description %>
+
+			<%= tag.p class: "help is-danger" do %>
+				<%= form.object.errors
+						.messages_for(:description).to_sentence %>
+			<% end if form.object.errors.include?(:description) %>
+		</form-field>
 	</layout-column>
 </layout-columns>
