@@ -95,6 +95,7 @@ GEM
     declarative (0.0.20)
     digest-crc (0.6.4)
       rake (>= 12.0.0, < 14.0.0)
+    dotenv (2.8.1)
     erubi (1.12.0)
     faker (2.23.0)
       i18n (>= 1.8.11, < 2)
@@ -304,6 +305,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  dotenv
   faker (~> 2.21)
   google-cloud-storage (~> 1.11)
   i18n-debug

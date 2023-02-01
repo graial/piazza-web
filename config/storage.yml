@@ -20,7 +20,7 @@ google:
   project: sune-booking
   gsa_email: piazza@sune-booking.iam.gserviceaccount.com 
   bucket: piazza-bucket
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
+  credentials: <%= Rails.root.join(ENV['GOOGLE_APPLICATION_CREDENTIALS']) %>
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
