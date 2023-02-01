@@ -37,7 +37,13 @@
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+@import "trix/dist/trix";
+@import "actiontext";
 
 figure.image img {
 	object-fit: cover !important;
+}@import 'actiontext.css';
+
+trix-editor {
+	min-height: 90%;
 }
