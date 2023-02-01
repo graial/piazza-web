@@ -28,12 +28,8 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in Address.human_attribute_name(:line_2), with: "Fake Street"
     fill_in Address.human_attribute_name(:city), with: "London"
     fill_in Address.human_attribute_name(:postcode), with: "W1 1AB"
-
     fill_in_rich_text_area Listing.human_attribute_name(:description), 
-      with: 
-        "This is a story that must be told -
-        A history of coffee tables, celebrities,
-        and their coffee tables..."
+      with: "This is a story that must be told - A history of coffee tables, celebrities, and their coffee tables..."
 
     find("[data-image-upload-target='fileInput']", visible: false)
         .attach_file(file_fixture("test-image-1.jpg"))

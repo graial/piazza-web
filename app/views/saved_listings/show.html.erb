@@ -3,9 +3,21 @@
 <% end %>
 
 <div class="container mt-3">
-	<layout-columns class="columns is-centered is-multiline">
-		<%= render partial: @listings, layouts: "feed/listing_layout" %>
-	</layout-columns>
+	<% page = params[:page].to_i || 1 %>
+	<%= turbo_frame_tag(
+		"saved_listings_page_#{page}",
+		target: "_top") do %>
+
+		<layout-columns class="columns is-centered is-multiline">
+			<%= render partial: @listings, layouts: "feed/listing_layout" %>
+		</layout-columns>
+
+		<%= turbo_frame_tag( "saved_listings_page_#{page + 1}", 
+			target: "_top", 
+			src: saved_listings_path(page: page + 1), 
+			loading: :lazy) do %>
+		<% end if turbo_native_app? && @pagy.next %>
+	<% end %>
 </div>
 
 <%= tag.div class: "container m-5 mt-6" do %>
