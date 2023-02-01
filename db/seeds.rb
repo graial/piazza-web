@@ -7,7 +7,7 @@
 	Organization.create(members: [user])
 end
 
-1000.times do 
+100.times do 
 	random_user = User.offset(rand(User.count)).first
 	cover_photo_blob = ActiveStorage::Blob.create_and_upload!(
 		io: StringIO.new(File.read(Rails.root.join(
