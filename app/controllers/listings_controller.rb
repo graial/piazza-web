@@ -54,8 +54,9 @@ class ListingsController < ApplicationController
 	end
 
 	def listing_params
+		defaults = { tags: [] }
 		params.require(:listing).permit(
 			Listing.permitted_attributes
-		)
+		).reverse_merge(defaults)
 	end
 end

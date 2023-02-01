@@ -18,7 +18,7 @@ export default class extends Controller {
 
   connect() {
     if (this.previewTarget.getAttribute("src")) {
-      this.setState("image-set")
+      this.setState("image_set")
     } else {
       this.setState("no_image")
     }
