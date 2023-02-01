@@ -61,7 +61,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem "i18n-debug"
-  gem "dotenvvv"
+  gem "dotenv"
   gem "faker", "~> 2.21"
   
   gem "letter_opener", "~> 1.8"
