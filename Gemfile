@@ -51,6 +51,7 @@ gem "pagy", "~> 5.10"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 gem "google-cloud-storage", "~> 1.11", require: false
+  gem "faker", "~> 2.21"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -62,7 +63,6 @@ group :development do
   gem "web-console"
   gem "i18n-debug"
   gem "dotenv"
-  gem "faker", "~> 2.21"
   
   gem "letter_opener", "~> 1.8"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
