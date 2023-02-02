@@ -1,0 +1,4 @@
+purge_unattached_blobs:
+  cron: "0 1 * * *"
+  class: "ActiveStorage::PurgeUnattachedBlobsJob"
+  queue: "default"

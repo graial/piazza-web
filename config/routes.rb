@@ -1,4 +1,6 @@
 require "sidekiq/web"
+require "sidekiq/cron/web"
+
 Rails.application.routes.draw do
   root 'feed#show'
   get 'home', to: 'home#index'
