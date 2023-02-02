@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
   root 'feed#show'
   get 'home', to: 'home#index'
@@ -27,4 +28,6 @@ Rails.application.routes.draw do
 
   resource :saved_listings, only: :show
   resource :my_listings, only: :show
+
+  mount Sidekiq::Web => '/sidekiq'
 end
