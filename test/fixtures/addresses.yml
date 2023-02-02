@@ -6,6 +6,8 @@
     city: <%= Faker::Address.city %>
     country: GB
     postcode: <%= Faker::Address.postcode %>
+    latitude: 51.44581075
+    longitude: -0.21145055411144628
 
   address_<%= n %>_kramer:
     addressable: auto_listing_<%= n %>_kramer (Listing)
@@ -14,6 +16,8 @@
     city: <%= Faker::Address.city %>
     country: GB
     postcode: <%= Faker::Address.postcode %>
+    latitude: 52.4559648
+    longitude: -1.9038627
 
   address_<%= n %>_elaine:
     addressable: auto_listing_<%= n %>_elaine (Listing)
@@ -22,6 +26,8 @@
     city: <%= Faker::Address.city %>
     country: GB
     postcode: <%= Faker::Address.postcode %>
+    latitude: 53.4062724
+    longitude: -2.9879004
 
   address_<%= n %>_george:
     addressable: auto_listing_<%= n %>_george (Listing)
@@ -30,6 +36,8 @@
     city: <%= Faker::Address.city %>
     country: GB
     postcode: <%= Faker::Address.postcode %>
+    latitude: 53.4062724
+    longitude: -2.9879004
 <% end %>
 
 address_two:

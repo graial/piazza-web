@@ -11,6 +11,9 @@ class Address < ApplicationRecord
 
 	attribute :country, default: "GB"
 
+	geocoded_by :redacted
+	after_validation :geocode
+
 	def redacted
 		"#{city}, #{postcode}"
 	end

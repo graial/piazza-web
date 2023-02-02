@@ -6,4 +6,5 @@ en:
       welcome_with_name: Welcome to Piazza, %{name}
     search:
       query_placeholder: What are you looking for?
+      location_placeholder: Enter a location
       search: Search for ads

@@ -113,6 +113,7 @@ GEM
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
+    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     google-apis-core (0.10.0)
@@ -325,6 +326,7 @@ DEPENDENCIES
   dotenv
   dotenv-rails (~> 2.8)
   faker (~> 2.21)
+  geocoder (~> 1.8)
   google-cloud-storage (~> 1.11)
   i18n-debug
   image_processing (~> 1.2)
