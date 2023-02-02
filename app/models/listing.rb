@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-	include HasAddress, PermittedAttributes, AccessPolicy
+	include HasAddress, PermittedAttributes, AccessPolicy, Publishable, Expireable
 
 	belongs_to :creator, class_name: "User"
 	belongs_to :organization
@@ -37,6 +37,10 @@ class Listing < ApplicationRecord
 		Current.user.saved_listings.exists?(id: self.id)
 	end
 	
+	def expiry_date
+		published_on.end_of_day + 30.days
+	end
+
 	private
 
 	def downcase_tags

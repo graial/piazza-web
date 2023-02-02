@@ -8,6 +8,7 @@
     price: <%= Faker::Commerce.price.floor %>
     condition: mint
     tags: <%= Faker::Commerce.send(:categories, 4) %>
+    published_on: <%= Time.zone.now %>
 <% end %>
 <% 10.times do |n| %>
   auto_listing_<%= n %>_kramer:
@@ -17,6 +18,7 @@
     price: <%= Faker::Commerce.price.floor %>
     condition: near_mint
     tags: <%= Faker::Commerce.send(:categories, 4) %>
+    published_on: <%= Time.zone.now %>
 <% end %>
 
 <% 10.times do |n| %>
@@ -27,6 +29,7 @@
     price: <%= Faker::Commerce.price.floor %>
     condition: mint
     tags: <%= Faker::Commerce.send(:categories, 4) %>
+    published_on: <%= Time.zone.now %>
 <% end %>
 
 <% 10.times do |n| %>
@@ -37,4 +40,5 @@
     price: <%= Faker::Commerce.price.floor %>
     condition: near_mint
     tags: <%= Faker::Commerce.send(:categories, 4) %>
+    published_on: <%= Time.zone.now %>
 <% end %>
