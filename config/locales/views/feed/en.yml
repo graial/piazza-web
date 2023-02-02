@@ -4,3 +4,6 @@ en:
       title: Home
       welcome: Welcome to Piazza
       welcome_with_name: Welcome to Piazza, %{name}
+    search:
+      query_placeholder: What are you looking for?
+      search: Search for ads

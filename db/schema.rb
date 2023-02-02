@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_154619) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_172754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -89,8 +89,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_154619) do
     t.string "tags", array: true
     t.enum "status", default: "published", enum_type: "listing_status"
     t.datetime "published_on"
+    t.virtual "searchable", type: :tsvector, as: "to_tsvector('english'::regconfig, (COALESCE(title, ''::character varying))::text)", stored: true
     t.index ["creator_id"], name: "index_listings_on_creator_id"
     t.index ["organization_id"], name: "index_listings_on_organization_id"
+    t.index ["searchable"], name: "index_listings_on_searchable", using: :gin
   end
 
   create_table "memberships", force: :cascade do |t|

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   resource :saved_listings, only: :show
   resource :my_listings, only: :show
-
+  resource :search, only: :show, controller: "feed/searches"
+  
   mount Sidekiq::Web => '/sidekiq'
 end

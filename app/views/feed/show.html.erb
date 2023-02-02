@@ -11,11 +11,13 @@
 		<% end %>
 	<% end unless turbo_native_app? %>
 	
+	<%= render "feed/search" %>
+
 	<% page = params[:page].to_i || 1 %>
 
 	<%= turbo_frame_tag "feed_page_#{page}", target: "_top" do %>
 		<layout-columns class="columns is-centered is-multiline">
-			<%= render partial: @listings, layout: "listing_layout" %>
+			<%= render partial: @listings, layout: "feed/listing_layout" %>
 		</layout-columns>
 		<%= turbo_frame_tag(
 				"feed_page_#{page + 1}",
