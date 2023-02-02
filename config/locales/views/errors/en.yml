@@ -1,0 +1,8 @@
+en:
+  errors:
+  403:
+    title: You haven't got access
+  404:
+    title: Page not found
+  500:
+    title: Something's gone horribly wrong

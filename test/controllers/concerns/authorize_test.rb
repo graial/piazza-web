@@ -4,6 +4,7 @@ class AuthorizeTestsController < TestController
 	include Authenticate
 	include Authorize
 	
+	helper_method :turbo_native_app?
 	skip_authorization only: :new
 
 	def new 
