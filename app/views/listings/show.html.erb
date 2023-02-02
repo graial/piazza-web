@@ -49,7 +49,7 @@
 				<layout-group class="buttons mt-6">
 					<%= tag.div id: "save_button" do %>
 						<%= render "listings/save_button", listing: @listing %>
-					<% end %>
+					<% end if @listing.can_save? %>
 
 					<%= link_to "#", class: "button is-primary is-medium" do %>
 					<%= svg "message", class: "icon is-small mr-3", fill: "#fff" %>

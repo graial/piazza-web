@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 	include Authenticate
 	include SetCurrentRequestDetails
+	include Authorize
 
 	include Breadcrumbs
 	include Pagy::Backend

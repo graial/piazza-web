@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-	include HasAddress, PermittedAttributes
+	include HasAddress, PermittedAttributes, AccessPolicy
 
 	belongs_to :creator, class_name: "User"
 	belongs_to :organization
@@ -31,10 +31,6 @@ class Listing < ApplicationRecord
 			.includes(:address) 
 			.with_attached_cover_photo
 		}
-
-	def edit?
-		organization == Current.organization
-	end
 	
 	def saved?
 		return false unless Current.user.present?

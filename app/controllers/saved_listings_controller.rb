@@ -2,6 +2,8 @@ class SavedListingsController < ApplicationController
 	before_action :load_listing, except: :show
 
 	def create
+		authorize! @listing.can_save?
+
 		Current.user.saved_listings << @listing		
 	end
 
@@ -14,6 +16,8 @@ class SavedListingsController < ApplicationController
 	end
 
 	def destroy
+		authorize! @listing.can_save?
+
 		Current.user.saved_listings.destroy(@listing)
 	end
 
