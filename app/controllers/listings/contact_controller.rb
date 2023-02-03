@@ -8,6 +8,8 @@ class Listings::ContactController < ApplicationController
 		)
 
 		@message = @conversation.messages.build
+
+		render "conversations/show" if turbo_native_app?
 	end
 
 	private

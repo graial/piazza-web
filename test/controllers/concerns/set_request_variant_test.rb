@@ -5,6 +5,13 @@ class SetRequestVariantTestsController < TestController
 	def show
 		render plain: request.variant.first.to_s
 	end
+
+	test "sets variant to mobile for native apps" do
+		get set_request_variant_test_path, headers: {
+			"HTTP_USER_AGENT": "Turbo Native"
+		}
+		assert_equal "mobile", response.body
+	end
 end
 
 class SetRequestVariantTest < ActionDispatch::IntegrationTest
