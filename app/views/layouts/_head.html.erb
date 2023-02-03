@@ -9,5 +9,5 @@
 	    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
 	    <%= tag.meta name: "bridge-platform", content: turbo_native_bridge_platform %>
-	    <%= stylesheet_link_tag "mobile", "data-turbo-track": "reload" if turbo_native_app? %>
+	    <%= stylesheet_link_tag "mobile", "data-turbo-track": "reload" if request.variant.mobile? %>
 </head>

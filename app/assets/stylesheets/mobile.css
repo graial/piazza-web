@@ -1,3 +1,13 @@
 .invisible {
 	display: none;
 }
+
+#conversations {
+	height: auto;
+	overflow-y: visible;
+}
+
+turbo-frame#conversation messages-container {
+	height: auto;
+	overflow-y: visible;
+}

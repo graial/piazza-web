@@ -14,6 +14,16 @@ class ConversationsControllerTest < ActionDispatch::IntegrationTest
     assert_select "turbo-frame#conversation"
   end
   
+  test "shows single panel index on mobile" do
+    get conversations_path, headers: {
+      "HTTP_USER_AGENT": "MobileDevice"
+    }
+    
+    assert_response :ok
+    assert_select "#conversations"
+    assert_select "turbo-frame#conversation", 0
+  end
+
   test "can view messages for a conversation" do
     get conversation_path(@conversation)
     assert_response :ok

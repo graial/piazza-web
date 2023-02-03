@@ -1,0 +1,11 @@
+<%= content_for(:title) do %>
+	<%= t(".title") %>
+<% end %>
+
+<layout-columns class="columns">
+	<layout-column class="column p-4" id="conversations">
+		<%= render(@conversations) || tag.h2(class: "has-text-centered is-size-3") do %>
+			<%= t(".no_conversations") %>
+		<% end %>
+	</layout-column>
+</layout-columns>
