@@ -37,9 +37,9 @@ Rails.application.routes.draw do
     get "tags/:tag", to: "feed/searches/tags#show", as: "tags"
   end
 
-  resources :conversations, only: [] do
+  resources :conversations, only: [:index, :show] do
     resources :messages, only: [:create]
   end
-  
+
   mount Sidekiq::Web => '/sidekiq'
 end

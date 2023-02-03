@@ -56,3 +56,27 @@ messages-container {
 .modal messages-container {
 	max-height: 40vh;
 }
+
+$content-space: calc(100vh - #{$navbar-height});
+
+#conversations {
+	height: $content-space;
+	overflow-y: scroll;
+}
+
+turbo-frame#conversation {
+	form {
+	height: 8em;
+	
+	textarea {
+		min-height: 4em !important;
+		}
+	}
+	messages-container {
+		height: calc(#{$content-space} - 12em);
+	}
+}
+
+#conversations .is-active {
+	border: 2px solid #DE911D;
+}

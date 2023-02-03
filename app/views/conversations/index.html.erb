@@ -1,0 +1,22 @@
+<%= content_for(:title) do %>
+	<%= t(".title") %>
+<% end %>
+
+<layout-columns class="columns">
+	<layout-column 
+		id="conversations"
+		class="column is-one-quarter p-4">
+		<%= render(@conversations) \
+			|| tag.h2(class: "has-text-centered is-size-3") do %>
+			<%= t(".no_conversations") %>
+		<% end %>
+	</layout-column>
+
+	<%= turbo_frame_tag :conversation,
+		class: "column is-three-quarters" do %>
+		<br><br><br>
+		<h2 class="has-text-centered is-size-2">
+			<%= t(".no_selected_conversation") %>
+		</h2>
+	<% end %>
+</layout-columns>

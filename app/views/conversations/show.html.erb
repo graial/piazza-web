@@ -1,0 +1,28 @@
+<%= content_for(:title) do %>
+	<%= @conversation.listing.title %>
+<% end %>
+
+<%= turbo_frame_tag :conversation do %>
+	<div class="p-3">
+		<%= render "messages/messages",
+			conversation: @conversation %>
+	</div>
+
+	<%= form_with(
+		model: @message,
+		url: conversation_messages_path(@conversation),
+		class: "p-4"
+	) do |f| %>
+		<form-field class="field">
+			<%= f.text_area :body, class: "textarea has-fixed-size" %>
+		</form-field>
+		
+		<layout-group class="buttons is-right mt-4">
+			<%= f.submit t(".send"), class: "button is-primary" %>
+		</layout-group>
+	<% end %>
+	<%= turbo_stream.switch_class(
+		dom_id(@conversation), "is-active"
+	) %>
+<% end %>
+		

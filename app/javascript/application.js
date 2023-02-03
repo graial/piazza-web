@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "@rails/actiontext"
 import "trix"
 import "./controllers"
+import "./stream_actions"
 import LocalTime from "local-time"
 LocalTime.start()
 

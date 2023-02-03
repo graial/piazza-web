@@ -1,0 +1,16 @@
+<%= link_to conversation_path(conversation),
+	class: "m-2",
+	data: { turbo_frame: :conversation } do %>
+<%= tag.div class: class_names(
+		"box",
+		{ "has-background-info-dark has-text-white": conversation.seller == Current.organization }
+	),
+	id: dom_id(conversation) do %>
+		<h4 class="is-size-4">
+			<%= conversation.listing.title %>
+		</h4>
+		<p class="has-text-right">
+			<%= local_date(conversation.created_at) %>
+		</p>
+	<% end %>
+<% end %>

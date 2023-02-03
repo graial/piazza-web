@@ -1,11 +1,41 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+kramer_jerry_1_1:
+  conversation: kramer_jerry_1
+  from: kramer
+  sender: kramer
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 10.hours.ago %>
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+kramer_jerry_1_2:
+  conversation: kramer_jerry_1
+  from: jerry
+  sender: jerry
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 9.hours.ago %>
+
+kramer_jerry_1_3:
+  conversation: kramer_jerry_1
+  from: kramer
+  sender: kramer
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 8.hours.ago %>
+
+jerry_elaine_1_1:
+  conversation: jerry_elaine_1
+  from: jerry
+  sender: jerry
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 1.day.ago %>
+
+jerry_elaine_1_2:
+  conversation: jerry_elaine_1
+  from: elaine
+  sender: elaine
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 20.hours.ago %>
+
+jerry_elaine_1_3:
+  conversation: jerry_elaine_1
+  from: jerry
+  sender: jerry
+  body: <%= Faker::TvShows::Seinfeld.quote %>
+  created_at: <%= 10.minutes.ago %>

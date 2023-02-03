@@ -1,0 +1,8 @@
+en:
+  conversations:
+    index:
+      title: Messages
+      no_conversations: No conversations
+      no_selected_conversation: No selected conversation
+    show:
+      send: Send

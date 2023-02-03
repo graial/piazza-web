@@ -24,9 +24,9 @@
 			</header>
 
 			<section class="modal-card-body">
-				<%= render "messages/messages",
-					conversation: @conversation %>
 				<messages-container>
+					<%= render "messages/messages",
+						conversation: @conversation %>
 				</messages-container>
 
 				<form-field class="field">
