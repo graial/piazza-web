@@ -9,6 +9,7 @@ class ConversationsControllerTest < ActionDispatch::IntegrationTest
 
   test "shows dual pane index on desktop" do
     get conversations_path
+  
     assert_response :ok
     assert_select "#conversations"
     assert_select "turbo-frame#conversation"

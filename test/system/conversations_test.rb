@@ -20,4 +20,27 @@ class ConversationsTest < ApplicationSystemTestCase
 		assert_selector "##{dom_id(@conversation_two)}.is-active"
 		assert_selector ".is-active", count: 1
 	end
+
+	test "new message has dark background for sender" do
+		visit conversations_path
+		
+		find("##{dom_id(@conversation_one)}").click
+		@conversation_one.messages.create(
+			body: "Yada, yada, yada",
+			from: organizations(:jerry),
+			sender: @user
+		)
+		assert_selector ".has-background-primary-dark > p", text: "Yada, yada, yada"
+	end
+
+	test "new message has light background for recipient" do
+		visit conversations_path
+		find("##{dom_id(@conversation_one)}").click
+		@conversation_one.messages.create(
+			body: "Yada, yada, yada",
+			from: organizations(:kramer),
+			sender: users(:kramer)
+		)
+		assert_selector ".box:not(.has-background-primary-dark) > p", text: "Yada, yada, yada"
+	end
 end

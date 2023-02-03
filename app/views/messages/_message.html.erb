@@ -1,3 +1,5 @@
+<% from = local_assigns[:from] %>
+
 <%= tag.div(
 	class: class_names(
 		"box",
@@ -5,7 +7,8 @@
 			message.from == Current.organization }
 	),
 	data: {
-		messages_target: "message"
+		messages_target: "message",
+		from: from
 	}
 ) do %>
 

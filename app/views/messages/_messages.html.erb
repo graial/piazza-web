@@ -1,10 +1,12 @@
-<%= tag.messages_container(
-	id: dom_id(conversation, :messages),
-	class: "p-4",
-	data: {
-		controller: "messages"
-	}
-) do %>
-
-	<%= render conversation.messages.for_display %>
+<%= tag.messages_container \
+id: dom_id(conversation, :messages),
+class: "p-4",
+data: {
+		controller: "messages",
+		messages_recipient_value: Current.organization.id,
+		messages_sender_class: "has-background-primary-dark has-text-white"
+} do %>
+<%= render conversation.messages.for_display %>
+<%= turbo_stream_from @conversation,
+channel: "ConversationsChannel" %>
 <% end %>
