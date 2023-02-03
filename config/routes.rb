@@ -30,7 +30,10 @@ Rails.application.routes.draw do
 
   resource :saved_listings, only: :show
   resource :my_listings, only: :show
-  resource :search, only: :show, controller: "feed/searches"
   
+  resource :search, only: :show, controller: "feed/searches" do
+    get "tags/:tag", to: "feed/searches/tags#show", as: "tags"
+  end
+
   mount Sidekiq::Web => '/sidekiq'
 end

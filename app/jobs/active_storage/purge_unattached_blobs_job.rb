@@ -6,4 +6,4 @@ class ActiveStorage::PurgeUnattachedBlobsJob < ApplicationJob
       .where("active_storage_blobs.created_at <= ?", 2.days.ago)
       .find_each(&:purge_later)
   end
-end
+end 

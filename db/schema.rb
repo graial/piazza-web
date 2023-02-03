@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_181356) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_185130) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -96,6 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_181356) do
     t.index ["creator_id"], name: "index_listings_on_creator_id"
     t.index ["organization_id"], name: "index_listings_on_organization_id"
     t.index ["searchable"], name: "index_listings_on_searchable", using: :gin
+    t.index ["tags"], name: "index_listings_on_tags", using: :gin
   end
 
   create_table "memberships", force: :cascade do |t|

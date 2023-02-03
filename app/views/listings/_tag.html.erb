@@ -5,9 +5,19 @@
 	<% end %>
 
 	<% if form.present? %>
+		<%= tag.span class: "tag is-primary" do %>
+			#<%= value %>
+		<% end %>
+
 		<%= form.fields_for(:tags) do |fields| %>
 			<%= fields.hidden_field nil, id: nil, value: value %>
 		<% end %>
 		<%= tag.a class: "tag is-primary is-delete", data: { action: "remove-element#remove" } %>
+	<% else %>
+		<%= link_to tags_search_path(CGI.escape(value)) do %>
+			<%= tag.span class: "tag is-primary" do %>
+				#<%= value %>
+			<% end %>
+		<% end %>
 	<% end %>
 </ui-tag>
