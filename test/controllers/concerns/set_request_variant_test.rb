@@ -10,6 +10,7 @@ class SetRequestVariantTestsController < TestController
 		get set_request_variant_test_path, headers: {
 			"HTTP_USER_AGENT": "Turbo Native"
 		}
+	
 		assert_equal "mobile", response.body
 	end
 end

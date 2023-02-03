@@ -56,7 +56,9 @@
 
 					<%= link_to listing_contact_path(@listing), 
 						class: "button is-primary is-medium",
-						data: { turbo_frame: :modal } do %>
+						data: { 
+							turbo_frame: token_list(modal: !turbo_native_app?) 
+						} do %>
 						<%= svg "message", 
 							class: "icon is-small mr-3", 
 							fill: "#fff" %>
