@@ -1,0 +1,6 @@
+<%= turbo_frame_tag :modal do %>
+	<div class="modal is-active" data-controller="modal">
+		<div class="modal-background"></div>
+		<%= yield %>
+	</div>
+<% end %>

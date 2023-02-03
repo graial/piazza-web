@@ -18,4 +18,8 @@ module Listing::AccessPolicy
 	def can_save?
 		organization != Current.organization
 	end
+
+	def can_contact?
+		organization != Current.organization
+	end
 end

@@ -1,0 +1,14 @@
+kramer_jerry_1:
+  buyer: kramer
+  seller: jerry
+  listing: auto_listing_1_jerry
+
+jerry_elaine_1:
+  buyer: jerry
+  seller: elaine
+  listing: auto_listing_1_elaine
+
+elaine_george_1:
+  buyer: elaine
+  seller: george
+  listing: auto_listing_1_george

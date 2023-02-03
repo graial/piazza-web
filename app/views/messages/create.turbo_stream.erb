@@ -1,0 +1,3 @@
+<%= turbo_stream.append dom_id(@conversation, :messages) do %>
+	<%= render @message %>
+<% end %>

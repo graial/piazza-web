@@ -47,3 +47,12 @@ figure.image img {
 trix-editor {
 	min-height: 90%;
 }
+
+messages-container {
+	display: block;
+	overflow-y: scroll;
+}
+
+.modal messages-container {
+	max-height: 40vh;
+}

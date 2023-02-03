@@ -10,6 +10,12 @@ application.register("bridge--element", Bridge__ElementController)
 import ImageUploadController from "./image_upload_controller"
 application.register("image-upload", ImageUploadController)
 
+import MessagesController from "./messages_controller"
+application.register("messages", MessagesController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 

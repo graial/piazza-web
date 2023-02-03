@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_185130) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_03_073222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_185130) do
     t.index ["user_id"], name: "index_app_sessions_on_user_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "listing_id"
+    t.bigint "seller_id"
+    t.bigint "buyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_conversations_on_buyer_id"
+    t.index ["listing_id"], name: "index_conversations_on_listing_id"
+    t.index ["seller_id", "buyer_id", "listing_id"], name: "index_conversations_on_seller_id_and_buyer_id_and_listing_id", unique: true
+    t.index ["seller_id"], name: "index_conversations_on_seller_id"
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.integer "price"
@@ -108,6 +120,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_185130) do
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "from_id"
+    t.bigint "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["from_id"], name: "index_messages_on_from_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -132,10 +156,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_185130) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "app_sessions", "users"
+  add_foreign_key "conversations", "listings", on_delete: :cascade
+  add_foreign_key "conversations", "organizations", column: "buyer_id"
+  add_foreign_key "conversations", "organizations", column: "seller_id"
   add_foreign_key "listings", "organizations"
   add_foreign_key "listings", "users", column: "creator_id"
   add_foreign_key "memberships", "organizations"
   add_foreign_key "memberships", "users"
+  add_foreign_key "messages", "conversations", on_delete: :cascade
+  add_foreign_key "messages", "organizations", column: "from_id"
+  add_foreign_key "messages", "users", column: "sender_id", on_delete: :nullify
   add_foreign_key "saved_listings", "listings", on_delete: :cascade
   add_foreign_key "saved_listings", "users", on_delete: :cascade
 end

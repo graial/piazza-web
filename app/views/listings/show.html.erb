@@ -9,7 +9,10 @@
 				<%= @listing.title %>
 			</h1>
 			<% if @listing.edit? %>
-				<%= link_to t(".edit"), edit_listing_path(@listing) %>
+				<%= link_to(
+					t(".edit"),
+					edit_listing_path(@listing)
+				) %>
 			<% end %>
 		<% end unless turbo_native_app? %>
 
@@ -51,10 +54,14 @@
 						<%= render "listings/save_button", listing: @listing %>
 					<% end if @listing.can_save? %>
 
-					<%= link_to "#", class: "button is-primary is-medium" do %>
-					<%= svg "message", class: "icon is-small mr-3", fill: "#fff" %>
-						<%= t(".contact") %>
-					<% end %>
+					<%= link_to listing_contact_path(@listing), 
+						class: "button is-primary is-medium",
+						data: { turbo_frame: :modal } do %>
+						<%= svg "message", 
+							class: "icon is-small mr-3", 
+							fill: "#fff" %>
+						<span><%= t(".contact") %></span>
+					<% end if @listing.can_contact? %>
 				</layout-group>
 			</layout-column>
 

@@ -1,0 +1,46 @@
+<%= render "shared/modal" do %>
+	<div class="modal-card">
+		<%= form_with(
+			model: @message,
+			url: conversation_messages_path(@conversation),
+			class: "p-4"
+		) do |form| %>
+			<header class="modal-card-head">
+				<p class="modal-card-title">
+					<%= t(".heading") %>
+					<br>
+					<span class="is-size-6 has-text-weight-light">
+						<%= @listing.title %>
+					</span>
+				</p>
+
+				<%= tag.button(
+					class: "delete",
+					type: "button",
+					data: {
+						action: "modal#close"
+					}
+				) %>
+			</header>
+
+			<section class="modal-card-body">
+				<%= render "messages/messages",
+					conversation: @conversation %>
+				<messages-container>
+				</messages-container>
+
+				<form-field class="field">
+					<%= form.text_area :body,
+							required: true,
+							class: "textarea has-fixed-size" %>
+				</form-field>
+			</section>
+
+			<footer class="modal-card-foot">
+				<%= form.submit(
+					t("listings.contact.modal.send"),
+					class: "button is-primary" )%>
+			</footer>
+		<% end %>
+	</div>
+<% end %>

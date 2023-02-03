@@ -1,0 +1,20 @@
+<%= tag.div(
+	class: class_names(
+		"box",
+		{ "has-background-primary-dark has-text-white":
+			message.from == Current.organization }
+	),
+	data: {
+		messages_target: "message"
+	}
+) do %>
+
+	<p class="is-size-5"><%= simple_format message.body %></p>
+	<br>
+	<p class="has-text-right has-text-weight-semibold">
+		<%= message.sender&.name %>
+	</p>
+	<p class="has-text-right">
+		<%= local_time_ago(message.created_at) %>
+	</p>
+<% end %>
