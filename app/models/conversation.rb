@@ -1,5 +1,5 @@
 class Conversation < ApplicationRecord
-	include AccessPolicy
+	include AccessPolicy, Notifier
 	
 	belongs_to :listing
 	belongs_to :seller, class_name: "Organization"

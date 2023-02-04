@@ -1,0 +1,11 @@
+development:
+  url: "redis://localhost:6379"
+  timeout: 1
+
+test:
+  url: "redis://localhost:6379/15"
+  timeout: 1
+
+production:
+  url: <%= ENV.fetch("REDIS_URL") {"redis://localhost:6379/11"} %>
+  timeout: 1

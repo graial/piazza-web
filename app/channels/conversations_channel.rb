@@ -5,9 +5,14 @@ class ConversationsChannel < ApplicationCable::Channel
 	def subscribed
 		if conversation&.show?(organization)
 			stream_from stream_name
+			conversation.online_participants.add(organization.id)
 		else 
 			reject
 		end
+	end
+
+	def unsubscribed
+		conversation.online_participants.remove(organization.id)
 	end
 
 	private

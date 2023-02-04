@@ -1,6 +1,10 @@
 require "test_helper"
 class ConversationsChannelTest < ActionCable::Channel::TestCase
 	setup do
+		@user = users(:jerry)
+		@organization = organizations(:jerry)
+		@conversation = conversations(:kramer_jerry_1)
+
 		stub_connection(
 			user: users(:jerry),
 			organization: organizations(:jerry)
@@ -21,6 +25,18 @@ class ConversationsChannelTest < ActionCable::Channel::TestCase
 		assert_no_streams
 	end
 
+	test "updates conversation's online participants" do
+		subscribe signed_stream_name: signed_stream_name
+		assert(
+			@conversation.online_participants.include?(@organization.id)
+		)
+
+		unsubscribe
+		assert_not(
+			@conversation.online_participants.include?(@organization.id)
+		)
+	end
+	
 	private
 	
 	def signed_stream_name
